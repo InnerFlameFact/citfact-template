@@ -3,7 +3,7 @@
 
 ## Установка
 
-``` shell
+``` bash
 cd /to/path/project/
 mkdir local && mkdir local/templates
 cd local/templates/

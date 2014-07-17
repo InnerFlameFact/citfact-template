@@ -9,19 +9,23 @@
     }
   ],
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "backbone": "~1.1.2",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "gulp": "~3.8.6",
     "coffee-script": "~1.7.1",
-    "browserify": "~4.2.1",
+    "stylus": "~0.47.1",
+    "nib": "~1.0.3",
     "gulp-coffee": "~2.1.1",
     "gulp-concat": "~2.3.3",
     "gulp-uglify": "~0.3.1",
     "gulp-stylus": "~1.0.5",
     "gulp-csso": "~0.2.9",
-    "stylus": "~0.47.1",
-    "nib": "~1.0.3"
+    "gulp-browserify": "~0.5.0",
+    "gulp-debug": "~0.3.0",
+    "gulp-rename": "~1.2.0"
   },
   "license": "MIT"
 }

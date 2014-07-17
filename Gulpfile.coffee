@@ -1,0 +1,7 @@
+gulp = require 'gulp'
+browserify = require 'browserify'
+coffee = require 'gulp-coffee'
+concat = require 'gulp-concat'
+uglify = require 'gulp-uglify'
+stylus = require 'gulp-stylus'
+csso = require 'gulp-csso'

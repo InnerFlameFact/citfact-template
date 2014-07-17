@@ -8,7 +8,19 @@
       "email": "onexhovia@gmail.com"
     }
   ],
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "coffee-script": "~1.7.1",
+    "browserify": "~4.2.1",
+    "gulp-coffee": "~2.1.1",
+    "gulp-concat": "~2.3.3",
+    "gulp-uglify": "~0.3.1",
+    "gulp-stylus": "~1.0.5",
+    "gulp-csso": "~0.2.9",
+    "stylus": "~0.47.1"
+  },
   "license": "MIT"
 }

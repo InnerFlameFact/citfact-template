@@ -11,4 +11,5 @@ git clone https://github.com/studiofact/citfact.template.git
 cd citfact.template
 npm install
 bower install
+gulp --require coffee-script
 ```

@@ -27,6 +27,7 @@ Loc::loadMessages(__FILE__);
     $GLOBALS['APPLICATION']->ShowMeta('keywords', false, true);
     $GLOBALS['APPLICATION']->ShowMeta('description', false, true);
     $GLOBALS['APPLICATION']->ShowCSS(true, true);
+    $GLOBALS['APPLICATION']->AddHeadScript(SITE_TEMPLATE_PATH . '/scripts.js');
     $GLOBALS['APPLICATION']->ShowHeadStrings();
     $GLOBALS['APPLICATION']->ShowHeadScripts();
     ?>

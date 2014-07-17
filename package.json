@@ -20,7 +20,8 @@
     "gulp-uglify": "~0.3.1",
     "gulp-stylus": "~1.0.5",
     "gulp-csso": "~0.2.9",
-    "stylus": "~0.47.1"
+    "stylus": "~0.47.1",
+    "nib": "~1.0.3"
   },
   "license": "MIT"
 }

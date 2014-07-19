@@ -25,9 +25,7 @@ paths =
     'vendor/bootstrap-stylus/js/affix.js'
   ]
   stylus: [
-    'static/bootstrap.styl'
-    'static/theme.styl'
-    'static/**/*.styl'
+    'static/application.styl'
   ]
 
 gulp.task 'coffee', ['script'], ->

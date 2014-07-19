@@ -1,6 +1,9 @@
 {
   "name": "citfact.template",
   "version": "0.0.1",
-  "dependencies": {},
+  "description": "Package for template 1C-Bitrix",
+  "dependencies": {
+    "bootstrap-stylus": "~3.1.1"
+  },
   "private": true
 }

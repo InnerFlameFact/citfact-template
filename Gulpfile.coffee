@@ -59,6 +59,6 @@ gulp.task 'dist', ['coffee', 'stylus'], ->
 
 gulp.task 'watch', ->
   gulp.watch paths.coffee, ['dist']
-  gulp.watch [paths.stylus, 'static/**/*.styl'], ['dist']
+  gulp.watch paths.stylus, ['dist']
 
 gulp.task 'default', ['coffee', 'script', 'stylus', 'dist']

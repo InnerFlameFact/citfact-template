@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Package for template 1C-Bitrix",
   "dependencies": {
-    "bootstrap-stylus": "3.0.0"
+    "bootstrap-stylus": "~~31111"
   },
   "private": true
 }

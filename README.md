@@ -14,7 +14,6 @@
 npm install -g coffee-script
 npm install -g bower
 npm install -g gulp
-npm install -g stylus
 
 # Переходим в папку проекта
 cd /to/path/project/

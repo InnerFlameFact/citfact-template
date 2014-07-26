@@ -8,7 +8,7 @@ csso = require 'gulp-csso'
 rename = require 'gulp-rename'
 
 paths =
-  coffee: 'src/**/*.coffee'
+  coffee: 'lib/**/*.coffee'
   script: [
     'vendor/bootstrap/js/transition.js'
     'vendor/bootstrap/js/alert.js'
@@ -24,7 +24,7 @@ paths =
     'vendor/bootstrap/js/affix.js'
   ]
   less: [
-    'static/application.less'
+    'stylesheets/application.less'
   ]
 
 gulp.task 'coffee', ['script'], ->

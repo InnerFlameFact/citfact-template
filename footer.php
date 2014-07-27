@@ -26,26 +26,26 @@ Loc::loadMessages(__FILE__);
 	<section class="bottom-menu container">
 		<div class="row">
 	        <div class="col-xs-6 menu-section">   
-				<h4>Часы</h4>
+				<h4>Заголовок</h4>
 				<div class="row sim-container">
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/g-shock/">G-SHOCK</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/edifice/">EDIFICE</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/pro-trek/">PRO TREK</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/baby-g/">BABY-G</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/sheen/">SHEEN</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/collection/">COLLECTION</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/g-shock/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/edifice/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/pro-trek/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/baby-g/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/sheen/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/catalog/collection/">Раздел</a></div></div>
 				</div>
 	        </div>
 	        <div class="col-xs-6 menu-section">
 				        
-				<h4>Компания</h4>
+				<h4>Заголовок</h4>
 				<div class="row sim-container">
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/o-magazine/">О магазине</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/o-chasakh/">О часах</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/garantiya-kachestva/">Гарантия качества</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/dostavka-i-oplata/">Доставка и оплата</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/kontakty/">Контакты</a></div></div>
-					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/news/">Новости и статьи</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/o-magazine/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/o-chasakh/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/garantiya-kachestva/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/dostavka-i-oplata/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/kontakty/">Раздел</a></div></div>
+					<div class="col-xs-6 col-md-4 sim-height"><div class="sim-height-wrap"><a href="/news/">Раздел</a></div></div>
 				</div>
 	        </div>
 	    </div>

@@ -57,6 +57,6 @@ gulp.task 'dist', ['coffee', 'less'], ->
 
 gulp.task 'watch', ->
   gulp.watch paths.coffee, ['dist']
-  gulp.watch [paths.less, 'static/**/*.less'], ['dist']
+  gulp.watch [paths.less, 'stylesheets/**/*.less'], ['dist']
 
 gulp.task 'default', ['coffee', 'script', 'less', 'dist']

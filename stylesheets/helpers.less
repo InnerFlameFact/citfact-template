@@ -26,6 +26,9 @@
 .invert-decoration:hover {
   text-decoration:underline;
 }
+.no-wrap {
+  white-space:nowrap;
+}
 .third {
   width:33%;
 }
@@ -68,4 +71,47 @@
 }
 .full {
   width:100%;
+}
+
+
+//
+// Media helpers
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+  .xs-no-padding {
+    padding:0px;
+  }
+  .xs-align-center {
+    text-align:center;
+  }
+  .xs-align-left {
+    text-align:left;
+  }
+  .xs-align-right {
+    text-align:right;
+  }
+  .xs-table-emulate {
+    display:table;
+  }
+  .xs-cell-emulate {
+    display:table-cell;
+  }
+  .xs-full {
+    width:100%;
+  }
+  .header-bg {
+    padding: 17px 0px 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .table-emulate-md {
+    display:table !important;
+  }
+  .cell-emulate-md {
+    display:table-cell !important;
+    float:none !important;
+    vertical-align:middle;
+  }
 }

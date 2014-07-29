@@ -50,14 +50,24 @@ Loc::loadMessages(__FILE__);
                             </button>
                         </div>
                         <div class="navbar-collapse collapse top table-emulate-md">
-                            <ul class="nav navbar-nav cell-emulate-md full">
-                                <li class="active cell-emulate-md align-center"><a href="#">О магазине</a></li>
-                                <li class="cell-emulate-md align-center"><a href="#about">Гарантия качества</a></li>
-                                <li class="cell-emulate-md align-center"><a href="#contact">Доставка и оплата</a></li>
-                                <li class="cell-emulate-md align-center"><a href="#">Новости и статьи</a></li>
-                                <li class="cell-emulate-md align-center"><a href="#">Контакты</a></li>
-                            </ul>
-                            <div class="header-personal-ref valign-middle align-center no-wrap cell-emulate-md"><a href="#">Войти в личный кабинет</a></div>
+                            <?$APPLICATION->IncludeComponent('bitrix:menu', "top_menu", array(
+                                    "ROOT_MENU_TYPE" => "top",
+                                    "MENU_CACHE_TYPE" => "Y",
+                                    "MENU_CACHE_TIME" => "36000000",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MAX_LEVEL" => "1",
+                                    "USE_EXT" => "N",
+                                    "ALLOW_MULTI_SELECT" => "N"
+                                )
+                            );?>
+                            <div class="header-personal-ref valign-middle align-center no-wrap cell-emulate-md">
+                                <? if($USER->IsAuthorized()): ?>
+                                    <a href="/personal/"><?= GetMessage('HELLO', array('#USER_LOGIN#' => $USER->GetLogin())) ?></a>
+                                <? else: ?>
+                                    <a href="/personal/profile/"><?= GetMessage('PERSONAL') ?></a>
+                                <? endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,22 +97,21 @@ Loc::loadMessages(__FILE__);
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2 cell-emulate-md">
-                        <div class="cart-line-container">
-                            <div class="top-section table-emulate full align-center">
-                                <a href="#">
-                                    <div class="cart-icon cell-emulate valign-middle">
-                                        <i class="icon"></i>
-                                    </div>
-                                    <div class="cart-content  cell-emulate valign-middle">
-                                        <div>12 товаров</div>
-                                        <div>на 39 000 руб.</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="bottom-section align-center">
-                                <a href="#">В сравнении: 8 товаров</a>
-                            </div>
-                        </div>
+
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:sale.basket.basket.small",
+                            "small_basket",
+                            Array(
+                                "PATH_TO_BASKET" => "/personal/cart/",
+                                "PATH_TO_ORDER" => "/personal/order/",
+                                "SHOW_DELAY" => "N",
+                                "SHOW_NOTAVAIL" => "N",
+                                "SHOW_SUBSCRIBE" => "N",
+                                "AJAX_MODE" => "N",
+                            ),
+                            false
+                        );?>
+
                     </div>
                 </div>
             </section>
@@ -113,51 +122,23 @@ Loc::loadMessages(__FILE__);
                 <div class="navbar navbar-default main hidden-xs">
                     <div class="container">
                         <div class="navbar-collapse main collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown"><a href="#" class="hover-emulate" data-id="32">Первый уровень <b class="caret"></b></a>
-                                    <ul class="dropdown-menu row">
-                                        <li class="col-sm-2">
-                                             <div><a href="#">Второй уровень</a></div>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                            
-                                        </li>
-                                        <li class="col-sm-2">
-                                        	<div><a href="#">Второй уровень</a></div>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a> 
-                                        </li>
-                                        <li class="col-sm-2">
-                                            <div><a href="#">Второй уровень</a></div>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                        </li>
-                                        <li class="col-sm-2">
-                                            <div><a href="#">Второй уровень</a></div>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                            <a href="#">Третий уровень</a>
-                                        </li>
-                                        <li class="col-sm-4 menu-item">
-                                            <div class="root-menu-item">
-                                                <div class="menu-image align-center">
-                                                    <a href="#">
-                                                        <img src="" data-original="" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="menu-description align-center"></div>
-                                                <a href="/catalog/sheen/" class="align-center">
-                                                    <div class="btn btn-default block">Cсылка</div>
-                                                </a>
-                                            </div>
-                                            <div class="container-menu-item"></div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+
+                            <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_main_menu", array(
+                                    "ROOT_MENU_TYPE" => "left",
+                                    "MENU_CACHE_TYPE" => "A",
+                                    "MENU_CACHE_TIME" => "36000000",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "MENU_THEME" => "site",
+                                    "CACHE_SELECTED_ITEMS" => "N",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MAX_LEVEL" => "4",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "USE_EXT" => "Y",
+                                    "DELAY" => "N",
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                ),
+                                false
+                            );?>
 
                         </div>
                     </div>
@@ -170,21 +151,24 @@ Loc::loadMessages(__FILE__);
                 			Каталог            
                 			</button>
         				</div>
-        			<div class="navbar-collapse main collapse">    
-						<ul class="nav navbar-nav">
-							<li class="dropdown-custom"><a href="/catalog/sheen/" class="drop-set">SHEEN <span class="caret-wrap"><b class="caret"></b></span></a>
-								<ul class="dropdown-custom-menu">
-									<li class="dropdown-custom"><a href="/catalog/sheen_cruise_line/" class="drop-set">CRUISE LINE <span class="caret-wrap"><b class="caret"></b></span></a>
-                						<ul class="dropdown-custom-menu">
-											<li><a href="/catalog/sheen_5500_series/">5500 SERIES</a></li>
-											<li><a href="/catalog/sheen_4500_series/">4500 SERIES</a></li>
-											<li><a href="/catalog/sheen_3500_series/">3500 SERIES</a></li>
-			
-										</ul>
-									</li>	
-								</ul>
-							</li>	
-						</ul>
+        			<div class="navbar-collapse main collapse">
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_main_mobile", array(
+                                "ROOT_MENU_TYPE" => "left",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_TIME" => "36000000",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "MENU_THEME" => "site",
+                                "CACHE_SELECTED_ITEMS" => "N",
+                                "MENU_CACHE_GET_VARS" => array(),
+                                "MAX_LEVEL" => "4",
+                                "CHILD_MENU_TYPE" => "left",
+                                "USE_EXT" => "Y",
+                                "DELAY" => "N",
+                                "ALLOW_MULTI_SELECT" => "N",z
+                            ),
+                            false
+                        );?>
+
         			</div>
     			</div>
 

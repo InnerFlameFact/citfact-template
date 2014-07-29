@@ -36,134 +36,156 @@ Loc::loadMessages(__FILE__);
 <? $GLOBALS['APPLICATION']->ShowPanel() ?>
 
 <main>
-  <header>
-    <div class="container">
+    <header>
+        <div class="container">
 
-      <section class="top-menu">
-        <div class="navbar navbar-default top-navbar">
-          <div class="container inner-padding">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle btn-gray-gradient" data-toggle="collapse"
-                      data-target=".navbar-collapse.top">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="navbar-collapse collapse top table-emulate-md">
-              <ul class="nav navbar-nav cell-emulate-md full">
-                <li class="active cell-emulate-md align-center"><a href="#">О магазине</a></li>
-                <li class="cell-emulate-md align-center"><a href="#about">Гарантия качества</a></li>
-                <li class="cell-emulate-md align-center"><a href="#contact">Доставка и оплата</a></li>
-                <li class="cell-emulate-md align-center"><a href="#">Новости и статьи</a></li>
-                <li class="cell-emulate-md align-center"><a href="#">Контакты</a></li>
-              </ul>
-              <div class="header-personal-ref valign-middle align-center no-wrap cell-emulate-md"><a
-                    href="#">Войти в личный кабинет</a></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="header-info">
-        <div class="container header table-emulate-md full">
-          <div class="logo col-md-3 col-lg-2 logo cell-emulate-md align-center">
-            <img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.png" alt=""/>
-          </div>
-          <div class="col-md-6 col-lg-8 cell-emulate-md">
-            <div class="row align-center">
-
-              <div class="header-backs col-xs-12">
-                <div class="row">
-                  <div class="col-xs-6"><a href="#">Заказать звонок</a></div>
-                  <div class="col-xs-6"><a href="#">Напишите нам</a></div>
+            <section class="top-menu">
+                <div class="navbar navbar-default top-navbar">
+                    <div class="container inner-padding">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle btn-gray-gradient" data-toggle="collapse" data-target=".navbar-collapse.top">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse top table-emulate-md">
+                            <?$APPLICATION->IncludeComponent('bitrix:menu', "top_menu", array(
+                                    "ROOT_MENU_TYPE" => "top",
+                                    "MENU_CACHE_TYPE" => "Y",
+                                    "MENU_CACHE_TIME" => "36000000",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MAX_LEVEL" => "1",
+                                    "USE_EXT" => "N",
+                                    "ALLOW_MULTI_SELECT" => "N"
+                                )
+                            );?>
+                            <div class="header-personal-ref valign-middle align-center no-wrap cell-emulate-md">
+                                <? if($USER->IsAuthorized()): ?>
+                                    <a href="/personal/"><?= GetMessage('HELLO', array('#USER_LOGIN#' => $USER->GetLogin())) ?></a>
+                                <? else: ?>
+                                    <a href="/personal/profile/"><?= GetMessage('PERSONAL') ?></a>
+                                <? endif; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </section>
+
+            <section class="header-info">
+                <div class="container header table-emulate-md full">
+                    <div class="logo col-md-3 col-lg-2 logo cell-emulate-md align-center">
+                        <img src="<?=SITE_TEMPLATE_PATH ?>/images/logo.png" alt=""/>
+                    </div>
+                    <div class="col-md-6 col-lg-8 cell-emulate-md">
+                        <div class="row align-center">
+
+                            <div class="header-backs col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-6"><a href="#">Заказать звонок</a></div>
+                                    <div class="col-xs-6"><a href="#">Напишите нам</a></div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="top-search">
+                                    <input type="text">
+                                    <input type="submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 cell-emulate-md">
+
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:sale.basket.basket.small",
+                            "small_basket",
+                            Array(
+                                "PATH_TO_BASKET" => "/personal/cart/",
+                                "PATH_TO_ORDER" => "/personal/order/",
+                                "SHOW_DELAY" => "N",
+                                "SHOW_NOTAVAIL" => "N",
+                                "SHOW_SUBSCRIBE" => "N",
+                                "AJAX_MODE" => "N",
+                            ),
+                            false
+                        );?>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="main-menu">
+
+                <div class="navbar navbar-default main hidden-xs">
+                    <div class="container">
+                        <div class="navbar-collapse main collapse">
+
+                            <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_main_menu", array(
+                                    "ROOT_MENU_TYPE" => "left",
+                                    "MENU_CACHE_TYPE" => "A",
+                                    "MENU_CACHE_TIME" => "36000000",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "MENU_THEME" => "site",
+                                    "CACHE_SELECTED_ITEMS" => "N",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MAX_LEVEL" => "4",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "USE_EXT" => "Y",
+                                    "DELAY" => "N",
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                ),
+                                false
+                            );?>
 
               <div class="col-xs-12">
                 <div class="top-search">
                   <input type="text">
                   <input type="submit">
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-lg-2 cell-emulate-md">
-            <div class="cart-line-container">
-              <div class="top-section table-emulate full align-center">
-                <a href="#">
-                  <div class="cart-icon cell-emulate valign-middle">
-                    <i class="icon"></i>
-                  </div>
-                  <div class="cart-content  cell-emulate valign-middle">
-                    <div>12 товаров</div>
-                    <div>на 39 000 руб.</div>
-                  </div>
-                </a>
-              </div>
-              <div class="bottom-section align-center">
-                <a href="#">В сравнении: 8 товаров</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
-      <section class="main-menu">
+                <div class="navbar navbar-default main mobile visible-xs">
+    				<div class="container inner-padding">
+        				<div class="navbar-header">
+            				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.main">
+                			Каталог            
+                			</button>
+        				</div>
+        			<div class="navbar-collapse main collapse">
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_main_mobile", array(
+                                "ROOT_MENU_TYPE" => "left",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_TIME" => "36000000",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "MENU_THEME" => "site",
+                                "CACHE_SELECTED_ITEMS" => "N",
+                                "MENU_CACHE_GET_VARS" => array(),
+                                "MAX_LEVEL" => "4",
+                                "CHILD_MENU_TYPE" => "left",
+                                "USE_EXT" => "Y",
+                                "DELAY" => "N",
+                                "ALLOW_MULTI_SELECT" => "N",z
+                            ),
+                            false
+                        );?>
 
-        <div class="navbar navbar-default main hidden-xs">
-          <div class="container">
-            <div class="navbar-collapse main collapse">
-              <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="#" class="hover-emulate" data-id="32">Первый уровень <b
-                        class="caret"></b></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-2">
-                      <div><a href="#">Второй уровень</a></div>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
+        			</div>
+    			</div>
 
-                    </li>
-                    <li class="col-sm-2">
-                      <div><a href="#">Второй уровень</a></div>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                    </li>
-                    <li class="col-sm-2">
-                      <div><a href="#">Второй уровень</a></div>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                    </li>
-                    <li class="col-sm-2">
-                      <div><a href="#">Второй уровень</a></div>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                      <a href="#">Третий уровень</a>
-                    </li>
-                    <li class="col-sm-4 menu-item">
-                      <div class="root-menu-item">
-                        <div class="menu-image align-center">
-                          <a href="#">
-                            <img src="" data-original="" alt="">
-                          </a>
-                        </div>
-                        <div class="menu-description align-center"></div>
-                        <a href="/catalog/sheen/" class="align-center">
-                          <div class="btn btn-default block">Cсылка</div>
-                        </a>
-                      </div>
-                      <div class="container-menu-item"></div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+            </section>
 
-            </div>
-          </div>
+
+            <section class="breadcrumbs-container">
+                <ol class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li class="active">Товар</li>
+                </ol>
+            </section>
+
         </div>
 
         <div class="navbar navbar-default main mobile visible-xs">

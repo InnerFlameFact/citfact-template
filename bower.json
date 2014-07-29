@@ -4,7 +4,10 @@
   "description": "Package for template 1C-Bitrix",
   "dependencies": {
     "bootstrap": "~3.2.0",
-    "ion-range-slider": "~1.9.1"
+    "ion-range-slider": "~1.9.1",
+    "carouFredSel": "*",
+    "jquery.lazyload": "~1.9.3"
+
   },
   "private": true
 }

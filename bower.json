@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Package for template 1C-Bitrix",
   "dependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "ion-range-slider": "~1.9.1"
   },
   "private": true
 }

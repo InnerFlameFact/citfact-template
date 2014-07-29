@@ -52,5 +52,10 @@ Loc::loadMessages(__FILE__);
 	</section>
 </footer>
 
+<script type="text/javascript">
+    $(function(){
+        window.Application.start({});
+    });
+</script>
 </body>
 </html>

@@ -42,7 +42,7 @@ gulp.task 'less', ->
     .pipe gulp.dest 'build/css'
 
 gulp.task 'dist', ['coffee', 'less'], ->
-  gulp.src './build/js/application.js'
+  gulp.src './build/js/main.js'
     .pipe browserify
       debug : true
       insertGlobals: true

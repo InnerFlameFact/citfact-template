@@ -11,7 +11,6 @@
 
 ``` bash
 # Устанавливаем глобально необходимые модули
-npm install -g coffee-script
 npm install -g bower
 npm install -g gulp
 
@@ -31,5 +30,5 @@ npm install
 bower install
 
 # Запускаем сборщик проекта
-gulp --require coffee-script
+gulp dist
 ```

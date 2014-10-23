@@ -3,5 +3,6 @@
 /bower_components
 /node_modules
 /vendor
+/app/citfact-*
 /scripts.js
 /template_styles.css

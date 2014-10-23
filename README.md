@@ -22,8 +22,8 @@ mkdir local && mkdir local/templates
 
 # Клонируем репозиторий и переходим в установленную директорию
 cd local/templates/
-git clone https://github.com/studiofact/citfact.template.git
-cd citfact.template
+git clone https://github.com/studiofact/citfact-template.git
+cd citfact-template
 
 # Устанавливаем необходимые зависимости
 npm install

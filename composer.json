@@ -1,5 +1,5 @@
 {
-  "name": "citfact/template",
+  "name": "citfact-js/template",
   "type": "bitrix-template",
   "description": "PHP template for 1C-Bitrix",
   "homepage": "https://github.com/studiofact-js/citfact-template",

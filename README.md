@@ -22,7 +22,7 @@ mkdir local && mkdir local/templates
 
 # Клонируем репозиторий и переходим в установленную директорию
 cd local/templates/
-git clone https://github.com/studiofact/citfact-template.git
+git clone https://github.com/studiofact-js/citfact-template.git
 cd citfact-template
 
 # Устанавливаем необходимые зависимости

@@ -30,3 +30,4 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 </head>
 <body>
 <? $APPLICATION->ShowPanel() ?>
+<div data-ui-view></div>

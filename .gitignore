@@ -1,5 +1,6 @@
 /dist
 /build
+/components
 /bower_components
 /node_modules
 /vendor

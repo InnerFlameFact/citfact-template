@@ -30,5 +30,6 @@ npm install
 bower install
 
 # Запускаем сборщик проекта
+gulp serve
 gulp dist
 ```

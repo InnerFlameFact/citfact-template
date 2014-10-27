@@ -5,6 +5,8 @@
   'use strict';
 
   angular
-    .module('citfact', ['citfact.news']);
+    .module('citfact', [
+      'citfact.user'
+    ]);
 
 })();

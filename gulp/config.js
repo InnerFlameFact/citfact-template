@@ -14,8 +14,10 @@ module.exports = {
   },
   javascript: {
     vendor: [
-      'vendor/angular/angular.min.js',
-      'vendor/angular-ui-router/release/angular-ui-router.min.js'
+      'vendor/angular/angular.js',
+      'vendor/angular-route/angular-route.js',
+      'vendor/angular-resource/angular-resource.js',
+      'vendor/angular-ui-router/release/angular-ui-router.js',
     ],
     app: [
       'app/app.module.js',

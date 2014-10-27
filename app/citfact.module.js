@@ -6,6 +6,7 @@
 
   angular
     .module('citfact', [
+      'citfact.news',
       'citfact.user'
     ]);
 

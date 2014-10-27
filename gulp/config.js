@@ -2,7 +2,8 @@ module.exports = {
   bowerComponents: 'vendor',
   citfactInstallDir: 'app',
   citfactDepend: [
-    'citfact-news'
+    'citfact-news',
+    'citfact-user'
   ],
   stylesheets: {
     vendor: [],
